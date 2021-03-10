@@ -12,24 +12,48 @@
 // module.exports = { sum };
 
 // one euro is:
+// let oneEuroIs = {
+//     "JPY": 127.9, // japan yen
+//     "USD": 1.2, // us dollar
+//     "GBP": 0.8, // british pound
+// }
+// //1.2 Dollar=>127.9
+// //50 Dollar=>? 
+// // fromDollarToYen
+// function fromDollarToYen(dollars){
+//             //50 * 127.9 / 1.2
+//    return dollars*oneEuroIs.JPY / oneEuroIs.USD
+// }
+
+// //fromEuroToDollar
+// function fromEuroToDollar(euro){
+//     return euro*oneEuroIs.USD
+// }
+
+// //fromYenToPound
+// function fromYenToPound(yen){
+//     return yen*oneEuroIs.GBP
+// }
+// module.exports = {fromDollarToYen,fromEuroToDollar,fromYenToPound};
+// one euro is:
 let oneEuroIs = {
     "JPY": 127.9, // japan yen
     "USD": 1.2, // us dollar
     "GBP": 0.8, // british pound
 }
 
-// fromDollarToYen
-function fromDollarToYen(dollars){
-   return dollars*oneEuroIs.JPY
+function fromDollarToYen(valor) {    
+    let resul =(valor*oneEuroIs.JPY)/oneEuroIs.USD;   
+    return resul;
 }
 
-//fromEuroToDollar
-function fromEuroToDollar(euro){
-    return euro*oneEuroIs.USD
+function fromEuroToDollar(valor) {
+    let resul = valor * oneEuroIs.USD
+    return resul;
 }
 
-//fromYenToPound
-function fromYenToPound(yen){
-    return yen*oneEuroIs.GBP
+function fromYanToPound(valor) {
+  let resul =(valor*oneEuroIs.GBP)/oneEuroIs.JPY;    
+    return resul;
 }
-module.exports = {fromDollarToYen,fromEuroToDollar,fromYenToPound};
+module.exports = { fromDollarToYen, fromEuroToDollar, fromYanToPound };
